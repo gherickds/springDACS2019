@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Cliente {
 	@Id
@@ -20,6 +22,7 @@ public class Cliente {
 	@Column(length=1000)
 	private String endereco;
 	@Temporal(value=TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "dd/MM/yyyy H:mm")
 	private Date dataNascimento;
 	
 	public long getId() {
