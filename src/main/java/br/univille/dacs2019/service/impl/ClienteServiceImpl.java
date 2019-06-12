@@ -1,6 +1,7 @@
 package br.univille.dacs2019.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,4 +32,11 @@ public class ClienteServiceImpl implements ClienteService{
 		clienteRepository.delete(cliente);
 	}
 
+	@Override
+	public Cliente findBy(long id) {
+		Optional<Cliente> retorno = clienteRepository.findById(id);
+		if(retorno.isPresent())
+			return retorno.get();
+		return null;
+	}
 }

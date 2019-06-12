@@ -14,4 +14,6 @@ public interface ClienteService {
 	void save(Cliente cliente);
 	
 	void remove(Cliente cliente);
+	
+	Cliente findBy(long id);
 }
